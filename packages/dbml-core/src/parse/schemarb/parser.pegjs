@@ -336,7 +336,7 @@ field_type_syntax = type:field_type sp+ name:name {
 reference_value = ":"reference:variable { return reference }
   / reference:name { return reference }
 
-referential_actions = "on_delete"i / "on_update"i
+referential_actions = "on_delete"i / "on_update"i / "name"i
 
 // Keywords
 add_index "add index" = "add_index"

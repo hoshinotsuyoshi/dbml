@@ -27,5 +27,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_14_000001) do
     t.index ["account_id", "domain"], name: "index_account_domain_blocks_on_account_id_and_domain", unique: true
   end
 
-  add_foreign_key "account_domain_blocks", "accounts", name: "fk_206c6029bd", on_delete: :cascade
+  #add_foreign_key "account_domain_blocks", "accounts", name: "fk_206c6029bd", on_delete: :cascade
+  add_foreign_key "account_domain_blocks", "accounts", name: :fk_206c6029bd, on_delete: :cascade
 end
