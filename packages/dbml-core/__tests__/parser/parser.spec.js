@@ -11,7 +11,6 @@ describe('@dbml/core', () => {
       const input = require(`./${testDir}/input/${fileName}.in.${fileExtension}`);
       const output = require(`./${testDir}/output/${fileName}.out.json`);
       const jsonSchema = Parser[parseFuncName](input);
-      console.log(JSON.stringify(jsonSchema, null, 2));
       isEqualExcludeTokenEmpty(jsonSchema, output);
     };
 
