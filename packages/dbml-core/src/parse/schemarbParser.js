@@ -174,7 +174,7 @@ function peg$parse(input, options) {
             }
           case 'name':
             return {
-              name: nameValue
+              name: value
             }
         }
        },

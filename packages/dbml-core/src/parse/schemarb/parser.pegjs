@@ -287,7 +287,7 @@ add_foreign_key_props_syntax
       }
     case 'name':
       return {
-        name: nameValue
+        name: value
       }
   }
  }
