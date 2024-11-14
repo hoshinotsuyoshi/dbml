@@ -275,6 +275,7 @@ add_foreign_key_syntax
 add_foreign_key_props_syntax
 = "," sp* column":" sp* columnName:name { return ({ columnName }) }
 / "," sp* primary_key":" sp* primaryKey:name { return ({ primaryKey }) }
+/ "," sp* name ":" sp* nameValue:name { return ({ name: nameValue }) }
 / "," sp* r:referential_actions":" sp* value:symbol {
   switch (r.toLowerCase()) {
     case 'on_delete':
