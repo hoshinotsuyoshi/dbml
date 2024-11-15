@@ -289,6 +289,10 @@ add_foreign_key_props_syntax
       return {
         onUpdate: value.split('_').join(' ')
       }
+  }
+ }
+/ "," sp* r:referential_actions":" sp* value:name {
+  switch (r.toLowerCase()) {
     case 'name':
       return {
         name: value

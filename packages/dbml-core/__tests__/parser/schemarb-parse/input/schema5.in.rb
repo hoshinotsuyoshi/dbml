@@ -28,5 +28,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_14_000001) do
   end
 
   #add_foreign_key "account_domain_blocks", "accounts", name: "fk_206c6029bd", on_delete: :cascade
-  add_foreign_key "account_domain_blocks", "accounts", name: :fk_206c6029bd, on_delete: :cascade
+  add_foreign_key "account_domain_blocks", "accounts", name: "fk_206c6029bd", on_delete: :cascade
 end
