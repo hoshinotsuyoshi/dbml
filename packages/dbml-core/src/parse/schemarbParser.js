@@ -2291,6 +2291,7 @@ function peg$parse(input, options) {
         tableName: toTable,
         relation: '1',
       }]);
+      let name = `fk_rails_${fromTable}_${toTable}`;
       let refProp = {};
       for (let i = 0; i < props.length; i += 1) {
         const currentProp = props[i];
@@ -2312,9 +2313,12 @@ function peg$parse(input, options) {
             onUpdate: currentProp.onUpdate
           }
         }
+        if (currentProp.name) {
+          name = currentProp.name;
+        }
       }
       return {
-        name: `fk_rails_${fromTable}_${toTable}`,
+        name,
         endpoints,
         ...refProp
       };

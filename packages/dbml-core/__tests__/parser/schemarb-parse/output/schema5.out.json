@@ -61,7 +61,7 @@
    ],
    "refs": [
      {
-       "name": "fk_rails_account_domain_blocks_accounts",
+       "name": "fk_206c6029bd",
        "endpoints": [
          {
            "tableName": "account_domain_blocks",
