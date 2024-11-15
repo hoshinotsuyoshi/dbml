@@ -128,6 +128,7 @@
       tableName: toTable,
       relation: '1',
     }]);
+    let name = `fk_rails_${fromTable}_${toTable}`;
     let refProp = {};
     for (let i = 0; i < props.length; i += 1) {
       const currentProp = props[i];
@@ -149,9 +150,12 @@
           onUpdate: currentProp.onUpdate
         }
       }
+      if (currentProp.name) {
+        name = currentProp.name;
+      }
     }
     return {
-      name: `fk_rails_${fromTable}_${toTable}`,
+      name,
       endpoints,
       ...refProp
     };
@@ -287,6 +291,14 @@ add_foreign_key_props_syntax
       }
   }
  }
+/ "," sp* r:referential_actions":" sp* value:name {
+  switch (r.toLowerCase()) {
+    case 'name':
+      return {
+        name: value
+      }
+  }
+ }
 
 create_table_syntax
   = create_table sp* name:name whateters endline
@@ -332,7 +344,7 @@ field_type_syntax = type:field_type sp+ name:name {
 reference_value = ":"reference:variable { return reference }
   / reference:name { return reference }
 
-referential_actions = "on_delete"i / "on_update"i
+referential_actions = "on_delete"i / "on_update"i / "name"i
 
 // Keywords
 add_index "add index" = "add_index"

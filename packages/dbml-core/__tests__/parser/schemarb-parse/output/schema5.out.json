@@ -1,0 +1,84 @@
+{
+   "tables": [
+     {
+       "name": "accounts",
+       "fields": [
+         {
+           "name": "id",
+           "type": {
+             "type_name": "varchar"
+           }
+         },
+         {
+           "name": "username",
+           "type": {
+             "type_name": "string"
+           }
+         },
+         {
+           "name": "domain",
+           "type": {
+             "type_name": "string"
+           }
+         }
+       ]
+     },
+     {
+       "name": "account_domain_blocks",
+       "fields": [
+         {
+           "name": "id",
+           "type": {
+             "type_name": "varchar"
+           }
+         },
+         {
+           "name": "domain",
+           "type": {
+             "type_name": "string"
+           }
+         },
+         {
+           "name": "created_at",
+           "type": {
+             "type_name": "datetime"
+           }
+         },
+         {
+           "name": "updated_at",
+           "type": {
+             "type_name": "datetime"
+           }
+         },
+         {
+           "name": "account_id",
+           "type": {
+             "type_name": "bigint"
+           }
+         }
+       ]
+     }
+   ],
+   "refs": [
+     {
+       "name": "fk_206c6029bd",
+       "endpoints": [
+         {
+           "tableName": "account_domain_blocks",
+           "relation": "1",
+           "fieldNames": [
+             "account_id"
+           ]
+         },
+         {
+           "tableName": "accounts",
+           "relation": "1",
+           "fieldNames": [
+             "id"
+           ]
+         }
+       ],
+       "onDelete": "cascade"
+     }
+   ]
+ }
